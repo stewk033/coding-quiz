@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Coding Quiz Challenge</title>
-</head>
-<body>
+    <link rel="shortcut icon" type="image/png" href="assets/images/favicon.png">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <a id="high-score" href="#">View High Scores</a>
+      <p id="timer" class="right">Time: <span id="clock">100</span></p>
+    </header>
+    <main>
+      <div class="container center">
+
+    <!-- LANDING PAGE -->
+
+        <section id="intro">
+          <h1>Coding Quiz Challenge</h1>
+          <p>Test your knowledge by answering the following code-related questions within the time limit. Incorrect answers will result in a penalty!</p>
+          <button class="btn" id="btnStart">Start Quiz</button>
+        </section>
+      </div>
+      <div class="container left">
     
-</body>
+    <!-- HIGH SCORE -->
+
+        <section id="high-score-view">
+          <h1>High Scores</h1>
+          <ol id="high-scores"></ol>
+          <div class="buttons"><button id="back" class="btn">Go Back</button> <button id="clear" class="btn">Clear high scores</button></div>
+        </section>
+      </div>
+    </main>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>

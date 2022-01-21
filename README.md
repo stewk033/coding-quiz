@@ -1,6 +1,6 @@
 # Coding Quiz Challenge
 
-This application adds a new challenge to the classic Mario Kart game. Different categories can be selected or assigned randomly that tells the player which driver and race courses to pick. Player selections will be stored for future reference. There is also a nifty music search feature that allows players to listen to their favorite Super Mario music while they play!
+This Coding Quiz Challenge makes use of Web APIs, consisting of HTML, CSS, and JavaScript. Test your knowledge and aim for the highest score in this coding-themed quiz. Answer the questions to the best of your ability, but be careful, a wrong answer will result in a penalty! 
 
 ## User Story
 
@@ -24,7 +24,7 @@ SO THAT I can gauge my progress compared to my peers
 
 ## Screenshots
 
-![MOCKUP]()
+![MOCKUP](https://github.com/stewk033/coding-quiz/blob/main/assets/images/04-web-apis-homework-demo.gif)
 
 ![SCREENSHOT]()
 
