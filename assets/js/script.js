@@ -30,6 +30,32 @@ var interval;
 var time = 100;
 var i = 0;
 
+var clearHighScoresHandler = function() {
+    localStorage.setItem('highScores', '');
+    displayHighScores();
+};
+
+var displayHighScores = function() {
+    var strHighScores = localStorage.getItem('highScores');
+  
+    olHighScores.innerHTML = '';
+    var li;
+    if (!strHighScores) {
+      li = document.createElement('li');
+      li.className = 'high-scores';
+      li.textContent = `No new scores to display!`;
+      olHighScores.appendChild(li);
+    } else {
+      var highScores = JSON.parse(strHighScores);
+      for (var i = 0; i < Math.min(highScores.length, 10); i++) {
+        li = document.createElement('li');
+        li.className = 'high-scores';
+        li.textContent = `${highScores[i].initials} - ${highScores[i].score}`;
+        olHighScores.appendChild(li);
+        }
+    }
+};
+
 
 secQuiz.onclick = quizClickHandler;
 btnStart.onclick = btnStartHandler;
