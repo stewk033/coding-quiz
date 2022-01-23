@@ -28,9 +28,9 @@ SO THAT I can gauge my progress compared to my peers
 
 ## My Solution
 
-Live URL: ()
+Live URL: (https://stewk033.github.io/coding-quiz/)
 
 Code:
-* [HTML] ()
-* [CSS] ()
-* [JS] ()
+* [HTML] (https://github.com/stewk033/coding-quiz/blob/main/index.html)
+* [CSS] (https://github.com/stewk033/coding-quiz/blob/main/assets/css/style.css)
+* [JS] (https://github.com/stewk033/coding-quiz/tree/main/assets/js)

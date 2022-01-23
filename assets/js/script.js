@@ -56,6 +56,117 @@ var displayHighScores = function() {
     }
 };
 
+var goBackHandler = function() {
+    form.reset();
+    i = 0;
+    time = 100;
+    spnClock.textContent = '100';
+    secHighScores.style.display = 'none';
+    secIntro.style.display = 'block';
+    aViewHighScores.style.display = 'block';
+};
+  
+var transitionToHighScores = function() {
+    secEnding.style.display = 'none';
+    secIntro.style.display = 'none';
+    secHighScores.style.display = 'block';
+  
+    displayHighScores();
+};
+  
+var frmHighScoreSubmitHandler = function(event) {
+    event.preventDefault();
+  
+    var newScore = {
+      initials: initials.value,
+      score: time,
+    };
+  
+    var strHighScores = localStorage.getItem('highScores');
+    var highScores;
+  
+    if (!strHighScores) {
+      highScores = [];
+      highScores.push(newScore);
+      localStorage.setItem('highScores', JSON.stringify(highScores));
+    } else {
+      highScores = JSON.parse(strHighScores);
+      for (var i = 0; i < highScores.length; i++) {
+        if (newScore.score >= highScores[i].score) {
+          highScores.splice(i, 0, newScore);
+          break;
+        }
+        if (i == highScores.length - 1) {
+          highScores.push(newScore);
+          break;
+        }
+      }
+      localStorage.setItem('highScores', JSON.stringify(highScores));
+    }
+    transitionToHighScores();
+};
+  
+var transitionToEnding = function() {
+    clearInterval(interval);
+    secQuiz.style.display = 'none';
+    secEnding.style.display = 'block';
+    spnScore.textContent = time;
+};
+  
+var quizClickHandler = function(event) {
+    if (event.target.tagName == 'LI') {
+      console.log(event.target.textContent);
+      if (event.target.textContent == questions[i].answer) {
+        pResult.textContent = 'Correct!';
+        } else {
+        pResult.textContent = 'Wrong!';
+        time -= 10;
+        if (time < 0) {
+          time = 0;
+          transitionToEnding();
+          spnClock.textContent = time;
+          return false;
+        }
+      }
+      i++;
+      if (i < 2) {
+        createQuestion();
+      } else {
+        transitionToEnding();
+        }
+    }
+};
+  
+var createQuestion = function() {
+    h1.textContent = `Question ${i + 1}: ${questions[i].question}`;
+    quizList.innerHTML = '';
+    questions[i].choices.forEach(function (choice) {
+      var li = document.createElement('li');
+      li.className = 'btn';
+      li.textContent = choice;
+      quizList.appendChild(li);
+    });
+};
+  
+var btnStartHandler = function() {
+    interval = setInterval(countdown, 1000);
+    secIntro.style.display = 'none';
+    aViewHighScores.style.display = 'none';
+    secQuiz.style.display = 'block';
+    createQuestion();
+};
+  
+var countdown = function() {
+    if (time >= 0) {
+      time--;
+      spnClock.textContent = time;
+    } else {
+      clearInterval(interval);
+      time = 0;
+      spnClock.textContent = time;
+      transitionToEnding();
+    }
+};
 
 secQuiz.onclick = quizClickHandler;
 btnStart.onclick = btnStartHandler;
