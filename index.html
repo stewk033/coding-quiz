@@ -24,6 +24,15 @@
         </section>
       </div>
       <div class="container left">
+
+    <!-- QUIZ -->
+
+        <section id="quiz">
+            <h1 id="quiz-question"></h1>
+            <ol id="quiz-list"></ol>
+            <hr />
+            <p class="result"></p>
+        </section>
     
     <!-- HIGH SCORE -->
 
@@ -32,8 +41,21 @@
           <ol id="high-scores"></ol>
           <div class="buttons"><button id="back" class="btn">Go Back</button> <button id="clear" class="btn">Clear high scores</button></div>
         </section>
+
+    <!-- ENDING  -->
+
+        <section id="ending">
+            <h1>Complete!</h1>
+            <p>Your final score: <span id="score"></span></p>
+            <form id="form" action="submit" class="flex">
+              <p>Enter Initials:</p>
+              <input type="text" name="initials" id="initials" />
+              <button class="btn">Submit</button>
+            </form>
+        </section>
       </div>
     </main>
+    <script src="./assets/js/quiz.js"></script>
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

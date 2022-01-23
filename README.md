@@ -26,8 +26,6 @@ SO THAT I can gauge my progress compared to my peers
 
 ![MOCKUP](https://github.com/stewk033/coding-quiz/blob/main/assets/images/04-web-apis-homework-demo.gif)
 
-![SCREENSHOT]()
-
 ## My Solution
 
 Live URL: ()
