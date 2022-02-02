@@ -24,7 +24,7 @@ SO THAT I can gauge my progress compared to my peers
 
 ## Screenshots
 
-![MOCKUP](https://github.com/stewk033/coding-quiz/blob/main/assets/images/04-web-apis-homework-demo.gif)
+![MOCKUP](https://github.com/stewk033/coding-quiz/blob/main/assets/images/quiz-screenshot.png)
 
 ## My Solution
 
